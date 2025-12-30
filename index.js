@@ -25,18 +25,18 @@ function initialize() {
 
         //Add authentication details for connecting to Azure Maps.
         authOptions: {
-            // Use SAS token for authentication 
-            authType: 'sas',
-            getToken: function (resolve, reject, map) {
-                // URL to your authentication service that retrieves a SAS Token
-                var tokenServiceUrl = 'https://samples.azuremaps.com/api/GetAzureMapsSasToken';
+            // // Use SAS token for authentication 
+            // authType: 'sas',
+            // getToken: function (resolve, reject, map) {
+            //     // URL to your authentication service that retrieves a SAS Token
+            //     var tokenServiceUrl = 'https://samples.azuremaps.com/api/GetAzureMapsSasToken';
 
-                fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
-            }
+            //     fetch(tokenServiceUrl).then(r => r.text()).then(token => resolve(token));
+            // }
 
             //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
-            //authType: 'subscriptionKey',
-            //subscriptionKey: '[YOUR_AZURE_MAPS_KEY]'
+            authType: 'subscriptionKey',
+            subscriptionKey: '5OnuA5dBgRgQpDwgqBQQBgkoEXHsbxoZmpxJtnFLImpbcEjcZH5UJQQJ99BLAC8vTInOoLcpAAAgAZMP3rUJ'
         }
     });
 
