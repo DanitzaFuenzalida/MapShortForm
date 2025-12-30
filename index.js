@@ -2,10 +2,10 @@
 var maxClusterZoomLevel = 11;
 
 //The URL to the store location data.
-var storeLocationDataUrl = '/tutorials/simple-store-locator/data/ContosoCoffee.txt';
+var storeLocationDataUrl = 'data/ContosoCoffee.txt';
 
 //The URL to the icon image. 
-var iconImageUrl = '/tutorials/simple-store-locator/images/CoffeeIcon.png';      
+var iconImageUrl = 'images/CoffeeIcon.png';      
 
 // Azure Maps Geocode API endpoints
 var geocodeAutocompleteUrlTemplate = 'https://{azMapsDomain}/geocode:autocomplete?api-version=2025-06-01-preview&query={query}&coordinates={lon},{lat}&bbox={bbox}&resultTypeGroups=Place&top={top}';
@@ -643,7 +643,7 @@ function showPopup(shape) {
         //Add the distance information.  
         '<br/>', distance,
         ' miles away',
-        '<br /><img src="/tutorials/simple-store-locator/images/PhoneIcon.png" title="Phone Icon"/><a href="tel:',
+        '<br /><img src="images/PhoneIcon.png" title="Phone Icon"/><a href="tel:',
         properties['Phone'],
         '">', 
         properties['Phone'],
@@ -654,11 +654,11 @@ function showPopup(shape) {
         html.push('<br/>Amenities: ');
 
         if (properties['IsWiFiHotSpot']) {
-            html.push('<img src="/tutorials/simple-store-locator/images/WiFiIcon.png" title="Wi-Fi Hotspot"/>');
+            html.push('<img src="images/WiFiIcon.png" title="Wi-Fi Hotspot"/>');
         }
 
         if (properties['IsWheelchairAccessible']) {
-            html.push('<img src="/tutorials/simple-store-locator/images/WheelChair-small.png" title="Wheelchair Accessible"/>');
+            html.push('<img src="images/WheelChair-small.png" title="Wheelchair Accessible"/>');
         }
     }
 
