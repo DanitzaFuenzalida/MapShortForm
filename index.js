@@ -177,7 +177,7 @@ function loadStoreData() {
             var features = [];
 
             //Skip the header row and then parse each row into a GeoJSON feature.
-            for (const item in items.locations) {
+            for (const item of items.locations) {
 
                 console.log(item);
 
