@@ -21,7 +21,14 @@ public class LocationService(LocationsDbContext context, ILogger<LocationService
 
         try
         {
-            var locations = await _context.Locations.ToListAsync();
+            var locations = await _context.Locations.Select( location => new LocationDto
+            {
+                Id = location.Id,
+                AddressLine = location.AddressLine,
+                City = location.City,
+                Latitude = location.Latitude,
+                Longitude = location.Longitude
+            }).ToListAsync();
             _logger.LogInformation("Successfully retrieved {Count} locations from database", locations.Count);
             return locations;
         }
