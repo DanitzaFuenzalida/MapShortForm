@@ -177,14 +177,14 @@ function loadStoreData() {
             var features = [];
 
             //Skip the header row and then parse each row into a GeoJSON feature.
-            for (let i = 0; i < items.length; i++) {
+            for (const item of items) {
 
-                var item = items[i];
+                console.log(item);
 
                 //Ensure that the row has the right number of columns.
-                features.push(new atlas.data.Feature(new atlas.data.Point([(item['longitude']), (item['latitude'])]), {
-                    AddressLine: item['addressLine'],
-                    City: item['city'],
+                features.push(new atlas.data.Feature(new atlas.data.Point([(item.longitude), (item.latitude)]), {
+                    AddressLine: item.addressLine,
+                    City: item.city,
                 }));
             }
 
