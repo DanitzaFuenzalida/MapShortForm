@@ -171,6 +171,8 @@ function loadStoreData() {
         .then(response => response.json())
         .then(function (items) {
 
+            console.log("loaded items", items);
+
             //Parse the Tab delimited file data into GeoJSON features.
             var features = [];
 
@@ -186,11 +188,16 @@ function loadStoreData() {
                 }));
             }
 
+            console.log("parsed features", features);
+
             //Add the features to the data source.
             datasource.add(features);
 
+            console.log("features added to datasource");
             //Initially update the list items.
             updateListItems();
+
+            console.log("list items updated");
         });
 }
 
