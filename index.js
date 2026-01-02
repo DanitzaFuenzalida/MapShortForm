@@ -171,15 +171,11 @@ function loadStoreData() {
         .then(response => response.json())
         .then(function (items) {
 
-            console.log("loaded items", items);
-
             //Parse the Tab delimited file data into GeoJSON features.
-            var features = [];
+            let features = [];
 
             //Skip the header row and then parse each row into a GeoJSON feature.
             for (const item of items.locations) {
-
-                console.log(item);
 
                 //Ensure that the row has the right number of columns.
                 features.push(new atlas.data.Feature(new atlas.data.Point([(item.longitude), (item.latitude)]), {
@@ -188,16 +184,11 @@ function loadStoreData() {
                 }));
             }
 
-            console.log("parsed features", features);
-
             //Add the features to the data source.
             datasource.add(features);
 
-            console.log("features added to datasource");
             //Initially update the list items.
             updateListItems();
-
-            console.log("list items updated");
         });
 }
 
